@@ -6,6 +6,9 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   
+  // Base path for GitHub Pages with custom domain
+  base: '/',
+  
   server: {
     host: "127.0.0.1",
     port: 8080,
@@ -24,5 +27,6 @@ export default defineConfig(({ mode }) => ({
   build: {
     target: "ES2020",
     sourcemap: false,
+    outDir: 'dist',
   },
 }));
